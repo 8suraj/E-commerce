@@ -1,0 +1,17 @@
+{
+	"name": "e-commerce",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"install-server": "npm install --prefix backend",
+		"install-client": "npm install --prefix client",
+		"install": "npm run backend && npm run client",
+		"client": "npm run dev --prefix client",
+		"server": "npm run watch --prefix backend",
+		"deploy": "npm run build --prefix client && npm start --prefix backend"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

@@ -1,11 +1,13 @@
-import dotenv from 'dotenv';
 import http from 'http';
+import { APP_PORT } from './utils/secrets';
 import app from './app';
+import logger from './utils/logger';
 
-dotenv.config();
 const server = http.createServer(app);
-const PORT = process.env.PORT || 3001;
 
-server.listen(PORT, () => {
-	console.log(`Server running on http://localhost:${PORT}`);
+server.listen(APP_PORT, () => {
+	console.log(
+		` Server running on http://localhost:${APP_PORT}`
+	);
+	logger.info(`server running on port : ${APP_PORT}`);
 });
